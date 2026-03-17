@@ -17,4 +17,8 @@ class phplaravel extends Controller
     function intenminh(){
         return view('phplaravel.tongbinhminh');
     }
+
+    function intensang(){
+        return view('phplaravel.nguyenminhsang');
+    }
 }
