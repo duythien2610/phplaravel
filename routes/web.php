@@ -13,6 +13,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\HelperController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\MovieController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -181,3 +183,6 @@ Route::get("/phamminhtri","App\Http\Controllers\phplaravel@intentri");
 Route::get("/tongbinhminh","App\Http\Controllers\phplaravel@intenminh");
 Route::get("/nguyenminhsang","App\Http\Controllers\phplaravel@intensang");
 Route::get("/lekieutrinh","App\Http\Controllers\phplaravel@intentrinh");
+
+Route::get('/movies/action', [MovieController::class, 'actionMovies']);
+
