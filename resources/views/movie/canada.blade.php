@@ -1,12 +1,15 @@
-@extends('layouts.app')
-
-@section('title', 'Phim Canada')
-
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phim Canada</title>
+</head>
+<body>
     <h1>Danh sách phim của Canada</h1>
 
     @if($movies->count() > 0)
-        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: center;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
                     <th>STT</th>
@@ -29,4 +32,5 @@
     @else
         <p>Không có phim nào của Canada.</p>
     @endif
-@endsection
+</body>
+</html>
