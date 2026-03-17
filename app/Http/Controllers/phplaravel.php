@@ -13,4 +13,8 @@ class phplaravel extends Controller
     function intentri(){
         return view('phplaravel.phamminhtri');
     }
+
+    function intenminh(){
+        return view('phplaravel.tongbinhminh');
+    }
 }
