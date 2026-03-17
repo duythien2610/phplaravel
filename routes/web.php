@@ -14,6 +14,10 @@ use App\Http\Controllers\HelperController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CookieController;
 use App\Http\Controllers\MovieController;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/trinh
 
 /*
 |--------------------------------------------------------------------------
@@ -195,3 +199,5 @@ Route::get('movie/long-runtime', [MovieController::class, 'longRuntime']);
 Route::get('movie/canada', [MovieController::class, 'canada']);
 
 Route::get('/movies/high-rated', [MovieController::class, 'highRated']);
+
+Route::get('/movies/action', [MovieController::class, 'actionMovies']);
