@@ -100,16 +100,16 @@ use App\Http\Controllers\CookieController;
 // Route::get('child', function(){
 //     return view('child');
 // });
-Route::get('admin/post/show',[AdminPostController::class, 'show']);
-Route::get('admin/post/add',[AdminPostController::class, 'add']);
-Route::get('admin/post/update/{id}',[AdminPostController::class, 'update']);
-Route::get('admin/post/delete/{id}',[AdminPostController::class, 'delete']);
+Route::get('admin/post/show', [AdminPostController::class, 'show']);
+Route::get('admin/post/add', [AdminPostController::class, 'add']);
+Route::get('admin/post/update/{id}', [AdminPostController::class, 'update']);
+Route::get('admin/post/delete/{id}', [AdminPostController::class, 'delete']);
 
-Route::get('child', function(){
+Route::get('child', function () {
     return view('child', ['data' => 4, 'post_title' => 'Khóa học hay']); //Truyền dữ liệu data và post_title vào view child
 });
 
-Route::get('demo',function(){
+Route::get('demo', function () {
     $users = array(
         1 => array('name' => 'Nguyen Van A'),
         2 => array('name' => 'Nguyen Van B'),
@@ -134,11 +134,12 @@ Route::get('demo',function(){
 // });
 
 
-Route::get('/user/insert',function(){
-    DB::table('users') -> insert([
+Route::get('/user/insert', function () {
+    DB::table('users')->insert([
         'name' => 'Nguyen Van A',
         'email' => 'vancuong@gmail.com',
-        'password' => bcrypt('admin')]);
+        'password' => bcrypt('admin')
+    ]);
 });
 
 // Route::get('post/add', [PostController::class,'add']);
@@ -157,26 +158,25 @@ Route::get('/user/insert',function(){
 // Route::get('roles/show', [RoleController::class,'show']);
 
 //FORM
-Route::get('post/add', [PostController::class,'add']); //Hiển thị form thêm bài viết
+Route::get('post/add', [PostController::class, 'add']); //Hiển thị form thêm bài viết
 
-Route::post('post/store', [PostController::class,'store']); //Xử lý dữ liệu từ form và lưu vào cơ sở dữ liệu
+Route::post('post/store', [PostController::class, 'store']); //Xử lý dữ liệu từ form và lưu vào cơ sở dữ liệu
 
-Route::get('post/show', [PostController::class,'show'])->name('post.show'); //Xử lý dữ liệu từ form và lưu vào cơ sở dữ liệu
+Route::get('post/show', [PostController::class, 'show'])->name('post.show'); //Xử lý dữ liệu từ form và lưu vào cơ sở dữ liệu
 
-Route::get('helper/url', [HelperController::class,'url']); //Sử dụng các hàm trợ giúp liên quan đến URL
+Route::get('helper/url', [HelperController::class, 'url']); //Sử dụng các hàm trợ giúp liên quan đến URL
 
-Route::get('session/add', [SessionController::class,'add']);
-Route::get('session/show', [SessionController::class,'show']);
+Route::get('session/add', [SessionController::class, 'add']);
+Route::get('session/show', [SessionController::class, 'show']);
 
-Route::get('session/add_flash', [SessionController::class,'add_flash']);
+Route::get('session/add_flash', [SessionController::class, 'add_flash']);
 
-Route::get('session/delete', [SessionController::class,'delete']);
+Route::get('session/delete', [SessionController::class, 'delete']);
 
-Route::get('cookie/set', [CookieController::class,'set']);
-Route::get('cookie/get', [CookieController::class,'get']);
+Route::get('cookie/set', [CookieController::class, 'set']);
+Route::get('cookie/get', [CookieController::class, 'get']);
 
 Route::get("/letrantrongluat","App\Http\Controllers\phplaravel@intenluat");
 Route::get("/phamminhtri","App\Http\Controllers\phplaravel@intentri");
 Route::get("/tongbinhminh","App\Http\Controllers\phplaravel@intenminh");
 Route::get("/nguyenminhsang","App\Http\Controllers\phplaravel@intensang");
-Route::get("/lekieutrinh","App\Http\Controllers\phplaravel@intentrinh");
