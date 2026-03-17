@@ -191,3 +191,5 @@ Route::get('movie/top-budget', [MovieController::class, 'topBudget']);
 
 // 7.4 - Hiển thị 10 bộ phim có thời lượng (runtime) lớn hơn 120 phút
 Route::get('movie/long-runtime', [MovieController::class, 'longRuntime']);
+
+Route::get('movie/canada', [MovieController::class, 'canada']);
