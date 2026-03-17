@@ -13,6 +13,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\HelperController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -181,6 +182,12 @@ Route::get("/phamminhtri","App\Http\Controllers\phplaravel@intentri");
 Route::get("/tongbinhminh","App\Http\Controllers\phplaravel@intenminh");
 Route::get("/the-loai","App\Http\Controllers\phplaravel@danhSachTheLoai");
 Route::get("/nguyenminhsang","App\Http\Controllers\phplaravel@intensang");
-
-Route::get('/top-movies', "App\Http\Controllers\MovieController@topMovies");
 Route::get("/lekieutrinh","App\Http\Controllers\phplaravel@intentrinh");
+
+Route::get('/top-movies', [MovieController::class, 'topMovies']);
+
+// 7.3 - Hiển thị 10 bộ phim có doanh thu (budget) cao nhất
+Route::get('movie/top-budget', [MovieController::class, 'topBudget']);
+
+// 7.4 - Hiển thị 10 bộ phim có thời lượng (runtime) lớn hơn 120 phút
+Route::get('movie/long-runtime', [MovieController::class, 'longRuntime']);
