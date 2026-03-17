@@ -1,0 +1,1 @@
+<p> Xóa bài viết có id là: {{ $id }}</p>
