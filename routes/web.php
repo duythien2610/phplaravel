@@ -179,3 +179,5 @@ Route::get("/letrantrongluat","App\Http\Controllers\phplaravel@intenluat");
 Route::get("/phamminhtri","App\Http\Controllers\phplaravel@intentri");
 Route::get("/tongbinhminh","App\Http\Controllers\phplaravel@intenminh");
 Route::get("/nguyenminhsang","App\Http\Controllers\phplaravel@intensang");
+
+Route::get('/top-movies', "App\Http\Controllers\MovieController@topMovies");
