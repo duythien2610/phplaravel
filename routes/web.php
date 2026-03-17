@@ -175,4 +175,5 @@ Route::get('session/delete', [SessionController::class,'delete']);
 Route::get('cookie/set', [CookieController::class,'set']);
 Route::get('cookie/get', [CookieController::class,'get']);
 
-Route::get("/letrantrongluat","App\Http\Controllers\phplaravel@inten");
+Route::get("/letrantrongluat","App\Http\Controllers\phplaravel@intenluat");
+Route::get("/phamminhtri","App\Http\Controllers\phplaravel@intentri");

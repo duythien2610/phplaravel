@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class phplaravel extends Controller
 {
-    function inten(){
+    function intenluat(){
         return view('phplaravel.letrantrongluat');
+    }
+
+    function intentri(){
+        return view('phplaravel.phamminhtri');
     }
 }
