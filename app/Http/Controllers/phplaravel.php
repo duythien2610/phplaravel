@@ -22,5 +22,11 @@ class phplaravel extends Controller
     function danhSachTheLoai(){
         $theLoai = DB::table('genre')->get();
         return view('phplaravel.the_loai', compact('theLoai'));
+    function intensang(){
+        return view('phplaravel.nguyenminhsang');
+    }
+
+    function intentrinh(){
+        return view('phplaravel.lekieutrinh');
     }
 }
