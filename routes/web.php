@@ -13,6 +13,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\HelperController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -176,5 +177,8 @@ Route::get('session/delete', [SessionController::class, 'delete']);
 Route::get('cookie/set', [CookieController::class, 'set']);
 Route::get('cookie/get', [CookieController::class, 'get']);
 
-Route::get('cookie/set', [CookieController::class, 'set']);
-Route::get('cookie/get', [CookieController::class, 'get']);
+// 7.3 - Hiển thị 10 bộ phim có doanh thu (budget) cao nhất
+Route::get('movie/top-budget', [MovieController::class, 'topBudget']);
+
+// 7.4 - Hiển thị 10 bộ phim có thời lượng (runtime) lớn hơn 120 phút
+Route::get('movie/long-runtime', [MovieController::class, 'longRuntime']);
