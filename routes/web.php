@@ -193,3 +193,5 @@ Route::get('movie/top-budget', [MovieController::class, 'topBudget']);
 Route::get('movie/long-runtime', [MovieController::class, 'longRuntime']);
 
 Route::get('movie/canada', [MovieController::class, 'canada']);
+
+Route::get('/movies/high-rated', [MovieController::class, 'highRated']);

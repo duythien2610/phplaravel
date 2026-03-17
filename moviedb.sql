@@ -1,4 +1,5 @@
 -- phpMyAdmin SQL Dump
+<<<<<<< HEAD
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
@@ -6,6 +7,15 @@
 -- Generation Time: Jan 02, 2024 at 12:13 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
+=======
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Mar 17, 2026 at 02:14 AM
+-- Server version: 8.0.40
+-- PHP Version: 8.3.14
+>>>>>>> origin/minh
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,12 +37,19 @@ SET time_zone = "+00:00";
 -- Table structure for table `genre`
 --
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `genre`;
 CREATE TABLE IF NOT EXISTS `genre` (
   `id` int(11) NOT NULL,
   `genre_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `genre_name_vn` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
+=======
+CREATE TABLE `genre` (
+  `id` int NOT NULL,
+  `genre_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `genre_name_vn` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+>>>>>>> origin/minh
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -66,6 +83,7 @@ INSERT INTO `genre` (`id`, `genre_name`, `genre_name_vn`) VALUES
 -- Table structure for table `movie`
 --
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `movie`;
 CREATE TABLE IF NOT EXISTS `movie` (
   `id` int(11) NOT NULL,
@@ -92,6 +110,32 @@ CREATE TABLE IF NOT EXISTS `movie` (
   `release_date` date DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
+=======
+CREATE TABLE `movie` (
+  `id` int NOT NULL,
+  `movie_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `movie_name_vn` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `original_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image_link` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `backdrop` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `backdrop_link` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tagline` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `tagline_vn` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `overview` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `overview_vn` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `runtime` int DEFAULT NULL,
+  `budget` int DEFAULT NULL,
+  `revenue` bigint DEFAULT NULL,
+  `popularity` float DEFAULT NULL,
+  `vote_average` float DEFAULT NULL,
+  `vote_count` int DEFAULT NULL,
+  `country_code` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trailer` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `release_date` date DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+>>>>>>> origin/minh
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -333,11 +377,17 @@ INSERT INTO `movie` (`id`, `movie_name`, `movie_name_vn`, `original_name`, `imag
 -- Table structure for table `movie_genre`
 --
 
+<<<<<<< HEAD
 DROP TABLE IF EXISTS `movie_genre`;
 CREATE TABLE IF NOT EXISTS `movie_genre` (
   `id_movie` int(11) NOT NULL,
   `id_genre` int(11) NOT NULL,
   PRIMARY KEY (`id_movie`,`id_genre`)
+=======
+CREATE TABLE `movie_genre` (
+  `id_movie` int NOT NULL,
+  `id_genre` int NOT NULL
+>>>>>>> origin/minh
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -1012,6 +1062,31 @@ INSERT INTO `movie_genre` (`id_movie`, `id_genre`) VALUES
 (1214849, 16),
 (1214849, 28),
 (1214849, 35);
+<<<<<<< HEAD
+=======
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `genre`
+--
+ALTER TABLE `genre`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `movie`
+--
+ALTER TABLE `movie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `movie_genre`
+--
+ALTER TABLE `movie_genre`
+  ADD PRIMARY KEY (`id_movie`,`id_genre`);
+>>>>>>> origin/minh
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
