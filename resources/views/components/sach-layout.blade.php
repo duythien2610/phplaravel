@@ -81,3 +81,6 @@
         </footer>
     </body>
 </html>
+<div>
+    {{ $slot }}
+</div>
