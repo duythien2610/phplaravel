@@ -14,10 +14,7 @@ use App\Http\Controllers\HelperController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\CookieController;
 use App\Http\Controllers\MovieController;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/trinh
+use App\Http\Controllers\ViduLayoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -181,19 +178,19 @@ Route::get('session/delete', [SessionController::class, 'delete']);
 Route::get('cookie/set', [CookieController::class, 'set']);
 Route::get('cookie/get', [CookieController::class, 'get']);
 
-Route::get("/letrantrongluat","App\Http\Controllers\phplaravel@intenluat");
-Route::get("/phamminhtri","App\Http\Controllers\phplaravel@intentri");
-Route::get("/tongbinhminh","App\Http\Controllers\phplaravel@intenminh");
-Route::get("/the-loai","App\Http\Controllers\phplaravel@danhSachTheLoai");
-Route::get("/nguyenminhsang","App\Http\Controllers\phplaravel@intensang");
-Route::get("/lekieutrinh","App\Http\Controllers\phplaravel@intentrinh");
+Route::get("/letrantrongluat", "App\Http\Controllers\phplaravel@intenluat");
+Route::get("/phamminhtri", "App\Http\Controllers\phplaravel@intentri");
+Route::get("/tongbinhminh", "App\Http\Controllers\phplaravel@intenminh");
+Route::get("/the-loai", "App\Http\Controllers\phplaravel@danhSachTheLoai");
+Route::get("/nguyenminhsang", "App\Http\Controllers\phplaravel@intensang");
+Route::get("/lekieutrinh", "App\Http\Controllers\phplaravel@intentrinh");
 
 Route::get('/top-movies', [MovieController::class, 'topMovies']);
 
-// 7.3 - Hiển thị 10 bộ phim có doanh thu (budget) cao nhất
+
 Route::get('movie/top-budget', [MovieController::class, 'topBudget']);
 
-// 7.4 - Hiển thị 10 bộ phim có thời lượng (runtime) lớn hơn 120 phút
+
 Route::get('movie/long-runtime', [MovieController::class, 'longRuntime']);
 
 Route::get('movie/canada', [MovieController::class, 'canada']);
@@ -201,3 +198,11 @@ Route::get('movie/canada', [MovieController::class, 'canada']);
 Route::get('/movies/high-rated', [MovieController::class, 'highRated']);
 
 Route::get('/movies/action', [MovieController::class, 'actionMovies']);
+
+// Ví dụ Layout
+Route::get('/trang1', 'App\Http\Controllers\ViduLayoutController@trang1');
+
+// Ví dụ 2 - Layout Sách
+Route::get('/sach', 'App\Http\Controllers\ViduLayoutController@sach');
+Route::get('/sach/theloai/{id}', 'App\Http\Controllers\ViduLayoutController@theloai');
+Route::get('/sach/chitiet/{id}', 'App\Http\Controllers\ViduLayoutController@chitiet');
